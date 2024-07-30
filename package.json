@@ -1,0 +1,8 @@
+{
+  "name": "novoProjeto",
+  "version": "1.0.0",
+  "description": "Primeiro Projeto em Node",
+  "main": "index.js",
+  "author": "Lucas",
+  "license": "MIT"
+}
