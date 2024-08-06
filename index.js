@@ -1,13 +1,16 @@
-const http = require('http');
-const hostname = 'localhost';
-const port = 3000;
+const express = require('express');
+const app = express();
+const path = require('path');
+const router = express.Router();
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Ola, Mundo! Me chamo Lucas Costa, sou aluno do curso Tecnico em Desenvolvimento de Sistemas no IFSudesteMG, campus Uba.\n\nMoro em Distrito de Triunfo, uma vila na zona rural que pertence a Candeias do Jamari, Rondonia. Tenho 19 anos.\n\nEstou no terceiro periodo e estou aprendendo a programar em Node.js e criar servidores.\n\nEstamos em processo de finalizacao do curso, realizando as ultimas quatro disciplinas. So gratidao ao IFSudesteMG por todo o aprendizado ate aqui.\n\nObrigado por acessar meu servidor! :)');
-});
+router.get('/',function(req,res){
+    res.sendFile(path.join(__dirname + '/index.html'));
+})
+router.get('/about',function(req,res){
+    res.sendFile(path.join(__dirname + '/about.html'));
+})
 
-server.listen(port, hostname, () => {
-    console.log(`Servidor rodando em http://${hostname}:${port}/`);
-});
+app.use('/', router);
+app.use('/about', router);
+app.listen(process.env.port || 3000);
+console.log("servidor rodando");

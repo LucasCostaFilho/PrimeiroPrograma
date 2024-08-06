@@ -4,5 +4,9 @@
   "description": "Primeiro Projeto em Node",
   "main": "index.js",
   "author": "Lucas",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/LucasCostaFilho/PrimeiroPrograma",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
